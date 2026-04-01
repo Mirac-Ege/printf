@@ -6,7 +6,7 @@
 /*   By: mkotan <mkotan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 19:46:50 by mkotan            #+#    #+#             */
-/*   Updated: 2026/02/23 21:55:21 by mkotan           ###   ########.fr       */
+/*   Updated: 2026/04/01 20:12:40 by mkotan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_dispatch(va_list args, char c)
 		return (ft_print_pointer(args));
 	if (c == '%')
 		return (write(1, "%", 1));
-	return (0);
+	return (write(1, "%", 1) + write(1, &c, 1));
 }
 
 int	ft_printf(const char *format, ...)
